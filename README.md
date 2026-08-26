@@ -29,3 +29,14 @@ Para este laboratorio creé o completé las siguientes funciones:
 
 ## Captura de ejecucion:
 ![terminal](docs/img.png)
+
+## Prompt para refactorizar el codigo aplicando POO
+
+comportate como un experto programador en Kotlin y programacion orientada a objetos, refactoriza el siguiente codigo de manera que se use poo.
+
+Mis requisitos obligatorios para la refactorizacion son:
+
+Uso estricto de POO: Todo el codigo y las funciones sueltas deben encapsularse dentro de clases apropiadas (por ejemplo, una clase Carrito que maneje la lista de productos y los calculos).
+Aplicar Polimorfismo: Modifica la clase o data class Producto para que sea una clase abstracta o interfaz base, y crea al menos dos subclases que hereden de ella (por ejemplo, ProductoDigital y ProductoFisico, o Electrodomestico y Accesorio) donde demuestres el polimorfismo aplicando un calculo o comportamiento distinto para cada tipo de producto.
+Mantener la logica comercial: Se deben conservar las reglas de negocio actuales (el calculo del 18% de IGV, la logica de descuentos con when de 5% y 10%, la impresion con formato alineado, y la busqueda del producto mas caro mediante maxByOrNull).
+Un solo archivo: Todo el codigo resultante (clases, interfaces, subclases y la funcion main) debe estar disenado para ejecutarse dentro de un unico archivo .kt.

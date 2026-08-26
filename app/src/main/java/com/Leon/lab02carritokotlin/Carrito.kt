@@ -1,5 +1,6 @@
 package com.Leon.lab02carritokotlin
 
+import android.annotation.SuppressLint
 import kotlin.math.round
 
 data class Producto(
@@ -25,6 +26,20 @@ fun calcularTotal(subtotal: Double, igv: Double): Double {
     var total = subtotal + igv
     return total
 }
+
+fun mostrarDetalle(productos: List<Producto>) {
+    println("--------- DETALLE DEL CARRITO ---------")
+    var i = 1
+    for (p in productos) {
+        val importe = p.precio * p.cantidad
+        println(String.format("%d. %-20s x%d S/ %8.2f",
+            i, p.nombre, p.cantidad, importe))
+        i++
+    }
+    println("---------------------------------------")
+}
+
+
 fun main() {
     println("=========================================")
     println(" CARRITO DE COMPRAS - TIENDA TECSUP ")
@@ -48,7 +63,10 @@ fun main() {
     val igv = calcularIGV(subtotal)
     val total = calcularTotal(subtotal, igv)
     println()
-    println("Subtotal: $subtotal")
-    println("IGV (18%): $igv")
-    println("Total: " + round(total * 100) / 100)
+    mostrarDetalle(carrito)
+    println("Cantidad de productos: ${carrito.size}")
+    println(String.format("%-20s S/ %8.2f", "Subtotal:", subtotal))
+    println(String.format("%-20s S/ %8.2f", "IGV (18%):", igv))
+    println(String.format("%-20s S/ %8.2f", "Total:", total))
+    println("---------------------------------------")
 }
